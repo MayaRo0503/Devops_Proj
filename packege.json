@@ -6,7 +6,6 @@
   "scripts": {
     "test": "jest --detectOpenHandles",
     "start": "node index.js"
-
   },
   "author": "maya",
   "license": "ISC",
