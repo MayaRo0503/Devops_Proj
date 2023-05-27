@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Student Register</title>
+  </head>
+  <body>
+    <h1>Student Register</h1>
+
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Exam 1</th>
+        <th>Exam 2</th>
+        <th>Exam 3</th>
+      </tr>
+      <% students.forEach((student) => { %>
+      <tr>
+        <td><%- escapeSpecialChars(student.name) %></td>
+        <td><%- student.exam1 %></td>
+        <td><%- student.exam2 %></td>
+        <td><%- student.exam3 %></td>
+      </tr>
+      <% }) %>
+    </table>
+
+    <script>
+      function escapeSpecialChars(text) {
+        return text.replace(/</g, "&lt;");
+      }
+    </script>
+  </body>
+</html>
