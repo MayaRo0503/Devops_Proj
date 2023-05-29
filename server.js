@@ -1,37 +1,27 @@
-/*const express = require("express");
-const app = express();
-const fs = require("fs");
-const path = require("path");
-
-// Define the path to the student grades file
-const filePath = path.join(__dirname, "data.txt");
-
-app.get("/", (req, res) => {
-  fs.readFile("C:\3rdDevops_Projdata.txt", "utf8", (err, data) => {
-    if (err) {
-      console.error(err);
-      return res.status(500).send("Internal Server Error");
-    }
-
-    const students = data.split("\n").map((line) => {
-      const [name, exam1, exam2, exam3] = line.split(",");
-      return { name, exam1, exam2, exam3 };
-    });
-
-    res.render("register", { students });
-  });
-});
-
-app.listen(3000, () => {
-  console.log("Server is running on http://localhost:3000");
-});
-
-module.exports = app;
-*/
-
 const express = require("express");
 const path = require("path");
 const app = express();
+const mongoose = require("mongoose");
+const gradesRouter = require("./routes/grades");
+const body_parser = require("body-parser");
+
+app.use(body_parser.urlencoded({ extended: true }));
+app.use(body_parser.json());
+
+const uri =
+  "mongodb+srv://Maya:260173Ma@devopsproject.kgl8tzh.mongodb.net/?retryWrites=true&w=majority";
+
+async function connect() {
+  try {
+    await mongoose.connect(uri);
+    console.log("connected to MongoDB");
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+connect();
+app.use("/grades", gradesRouter);
 
 app.get("/", (req, res) => {
   res.send("Hello");
