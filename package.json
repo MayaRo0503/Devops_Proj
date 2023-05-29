@@ -92,7 +92,7 @@
     "supertest": "^6.3.3"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --detectOpenHandles",
     "start": "node server.js"
   },
   "author": "Maya Rozenberg",
