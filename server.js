@@ -1,4 +1,4 @@
-const express = require("express");
+/*const express = require("express");
 const app = express();
 const fs = require("fs");
 const path = require("path");
@@ -24,6 +24,20 @@ app.get("/", (req, res) => {
 
 app.listen(3000, () => {
   console.log("Server is running on http://localhost:3000");
+});
+
+module.exports = app;
+*/
+
+const express = require("express");
+
+const app = express();
+
+app.get("/", (req, res) => {
+  res.send("Hello");
+});
+app.get("/test", (req, res) => {
+  res.send("test Hello");
 });
 
 module.exports = app;
