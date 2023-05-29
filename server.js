@@ -30,7 +30,7 @@ module.exports = app;
 */
 
 const express = require("express");
-
+const path = require("path");
 const app = express();
 
 app.get("/", (req, res) => {
@@ -38,6 +38,10 @@ app.get("/", (req, res) => {
 });
 app.get("/test", (req, res) => {
   res.send("test Hello");
+});
+
+app.get("/register", (req, res) => {
+  res.sendFile(path.join(__dirname, "register.html"));
 });
 
 module.exports = app;
