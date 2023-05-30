@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const express = require("express");
 const router = express.Router();
-const Grade = require("../models/Grade");
+const Grade = require("../models/Grade").default;
 
 // POST /grades - Save grades to the database
 router.post("/", async (req, res) => {

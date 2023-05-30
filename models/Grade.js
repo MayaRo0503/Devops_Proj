@@ -1,6 +1,5 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const mongoose = require("mongoose");
-const express = require("express");
-const router = express.Router();
 
 const gradeSchema = new mongoose.Schema({
   fullName: {

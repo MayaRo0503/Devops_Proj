@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-disable no-undef */
 const express = require("express");
 const bodyParser = require("body-parser");
 const morgan = require("morgan");

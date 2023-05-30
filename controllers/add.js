@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const Grade = require("../models/Grade");
 
 const getGrades = async (req, res) => {

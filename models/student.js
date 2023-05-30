@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const mongoose = require("mongoose");
 
 const studentSchema = new mongoose.Schema({
