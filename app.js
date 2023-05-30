@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 
 // Routes
-app.post("/Grade", (req, res) => {
+app.post("/grades", (req, res) => {
   const { name, exam1, exam2, exam3 } = req.body;
   database.storeRegistration(name, exam1, exam2, exam3);
   res.sendStatus(200);

@@ -1,4 +1,4 @@
-/*const express = require("express");
+const express = require("express");
 const router = express.Router();
 const Grade = require("../models/Grade");
 
@@ -27,4 +27,3 @@ router.post("/", async (req, res) => {
 });
 
 module.exports = router;
-*/
