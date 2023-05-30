@@ -1,17 +1,14 @@
-const { app, connect } = require("../server");
+const app = require("../server");
 const request = require("supertest");
-const mongoose = require("mongoose");
-const Grade = require("../models/Grade");
 
-describe("Homepage", () => {
-  beforeAll(async () => {
-    await connect();
-    console.log("Connected to MongoDB");
-  }, 10000);
+describe("test suite 1:", () => {
+  test("test 1: ", async () => {
+    const res = await request(app).get("/");
+    expect(res.statusCode).toEqual(200);
+  });
 
-  test("GET / should return the homepage", async () => {
-    const response = await request(app).get("/register");
-    expect(response.statusCode).toBe(200);
-    expect(response.text).toContain("<!DOCTYPE html>");
+  test("test 2: ", async () => {
+    const res = await request(app).get("/1234");
+    expect(res.statusCode).toEqual(404);
   });
 });

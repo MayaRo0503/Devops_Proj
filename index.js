@@ -1,4 +1,7 @@
 const app = require("./server");
+const connect = require("./connect");
+
+connect();
 
 const port = process.env.PORT || 3001;
 
