@@ -11,11 +11,13 @@ app.use(morgan("dev"));
 // Routes
 app.post("/register", (req, res) => {
   const { name, exam1, exam2, exam3 } = req.body;
+  // Assuming 'database' is defined and handles the registration logic
   database.storeRegistration(name, exam1, exam2, exam3);
   res.sendStatus(200);
 });
 
 // Start the server
-app.listen(process.env.PORT, () => {
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
