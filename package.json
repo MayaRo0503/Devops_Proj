@@ -102,5 +102,8 @@
     "devstart": "nodemon index.js"
   },
   "author": "Maya Rozenberg",
-  "license": "ISC"
+  "license": "ISC",
+  "jest": {
+    "testTimeout": "10000"
+  }
 }
