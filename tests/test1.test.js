@@ -7,7 +7,7 @@ describe("Homepage", () => {
   beforeAll(async () => {
     await connect();
     console.log("Connected to MongoDB");
-  });
+  }, 10000);
 
   test("GET / should return the homepage", async () => {
     const response = await request(app).get("/register");
