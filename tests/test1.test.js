@@ -9,7 +9,7 @@ const grade2 = 90;
 const grade3 = 75;
 
 beforeEach(async () => {
-  await Grade.deleteMany({});
+  //await Grade.deleteMany({});
 });
 
 afterAll(async () => {
