@@ -9,14 +9,11 @@ app.use(body_parser.json());
 
 app.use("/grades", gradesRouter);
 
-app.get("/", (req, res) => {
-  res.send("Hello");
-});
 app.get("/test", (req, res) => {
   res.send("test Hello");
 });
 
-app.get("/register", (req, res) => {
+app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "register.html"));
 });
 
