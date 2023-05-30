@@ -12,7 +12,7 @@ const getGrades = async (req, res) => {
   }
 };
 
-const addGrade = (req, res) => {
+const addGrade = async (req, res) => {
   const { fullName, grade1, grade2, grade3 } = req.body;
 
   const grade = new Grade({

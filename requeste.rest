@@ -1,14 +1,28 @@
 ###
 
 
-GET http://localhost:3000/
+GET http://localhost:3001/
 
 
 
 
 ###
 
-GET http://localhost:3000/register
+GET http://localhost:3001/register
 
 
 ###
+
+
+POST http://localhost:3001/grades
+
+
+###
+
+POST  http://localhost:3001/Grade
+
+
+###
+
+
+GET http://localhost:3001/student

@@ -5,9 +5,6 @@ const mongoose = require("mongoose");
 const gradesRouter = require("./routes/grades");
 const body_parser = require("body-parser");
 
-app.use(body_parser.urlencoded({ extended: true }));
-app.use(body_parser.json());
-
 const uri =
   "mongodb+srv://Maya:260173Ma@devopsproject.kgl8tzh.mongodb.net/?retryWrites=true&w=majority";
 
