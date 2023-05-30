@@ -104,6 +104,6 @@
   "author": "Maya Rozenberg",
   "license": "ISC",
   "jest": {
-    "testTimeout": "10000"
+    "testTimeout": 10000
   }
 }
