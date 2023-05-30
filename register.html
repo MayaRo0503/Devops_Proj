@@ -73,6 +73,25 @@
         color: red;
         margin-bottom: 10px;
       }
+
+      /* Additional style for the display button */
+      #displayButton {
+        width: 400px;
+        padding: 12px;
+        background-color: #4287f5;
+        color: #ffffff;
+        border: none;
+        border-radius: 3px;
+        font-size: 18px;
+        cursor: pointer;
+        margin: 10px auto;
+        display: block;
+      }
+
+      /* Style for the student list */
+      #studentList {
+        margin-top: 20px;
+      }
     </style>
   </head>
   <body>
@@ -94,6 +113,8 @@
 
         <input type="submit" value="Submit" />
       </form>
+      <input type="button" id="displayButton" value="Display Students" />
+      <div id="studentList"></div>
     </div>
 
     <script>
@@ -126,16 +147,38 @@
           })
             .then(function (response) {
               if (response.ok) {
-                alert("Grades saved successfully");
                 document.getElementById("gradeForm").reset(); // Reset the form
               } else {
-                alert("Error occurred while saving grades");
+                console.error("Error occurred while saving grades");
               }
             })
             .catch(function (error) {
               console.error("Error:", error);
             });
+
+          displayStudents();
         });
+
+      const displayButton = document.getElementById("displayButton");
+      displayButton.addEventListener("click", displayStudents);
+
+      async function displayStudents() {
+        try {
+          const response = await fetch("/grades");
+          if (response.ok) {
+            const students = await response.json();
+            let html = "<h2>Students List</h2>";
+            students.forEach((student) => {
+              html += `<p>Name: ${student.fullName}, Grades: ${student.grade1}, ${student.grade2}, ${student.grade3}</p>`;
+            });
+            document.getElementById("studentList").innerHTML = html;
+          } else {
+            console.error("Error occurred while fetching students");
+          }
+        } catch (error) {
+          console.error("Error:", error);
+        }
+      }
     </script>
   </body>
 </html>
