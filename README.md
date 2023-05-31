@@ -9,7 +9,7 @@ There will be an option to entering the details into the DB with which the site 
 There will be an option to display the existing data in the DB.
 
 # **Project guidelines:**
-* A page that will receive user input + 3 marks
+* A page that will receive user name + 3 grades
 * Writing tests that will pass
 * Uploading the project to deployment
 * Added eslint 
